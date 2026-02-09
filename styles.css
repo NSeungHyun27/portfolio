@@ -140,7 +140,6 @@ ul {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 6rem 0 4rem;
 }
 
 .hero-bg {
@@ -149,30 +148,45 @@ ul {
   pointer-events: none;
 }
 
+/* 화면 가득 채우는 히어로 배경 이미지 (이미지 경로: images/hero.jpg 등으로 변경 가능) */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 50%, var(--bg) 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 배경 이미지를 사용하려면 아래 주석을 해제하고 경로를 지정하세요 */
+.hero-bg-image { background-image: url('images/Background.jpg'); } */
+
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(88, 166, 255, 0.15), transparent),
-              radial-gradient(ellipse 60% 40% at 80% 50%, rgba(88, 166, 255, 0.08), transparent);
+  background: linear-gradient(to bottom, rgba(13, 17, 23, 0.4) 0%, rgba(13, 17, 23, 0.7) 100%);
 }
-
+/*
 .hero-pattern {
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2330363d' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   opacity: 0.5;
-}
+}*/
 
 .hero-inner {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 5rem 0 4rem;
 }
 
 .hero-content {
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .hero-label {
@@ -228,34 +242,6 @@ ul {
 
 .btn-full {
   width: 100%;
-}
-
-.hero-image-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
-}
-
-.hero-image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 1rem;
 }
 
 /* ===== Projects ===== */
@@ -409,28 +395,8 @@ ul {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
   .hero-content {
     max-width: 100%;
-  }
-
-  .hero-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero .btn {
-    margin: 0 auto;
-  }
-
-  .hero-image-wrap {
-    order: -1;
-    max-width: 320px;
-    margin: 0 auto;
   }
 
   .project-grid {
@@ -480,10 +446,9 @@ ul {
     padding: 1rem;
   }
 
-  .hero {
+  .hero-inner {
     padding-top: 5rem;
-    min-height: auto;
-    padding-bottom: 3rem;
+    min-height: 100vh;
   }
 
   .projects,
