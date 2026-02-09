@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>게임 클라이언트 | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Portfolio</a>
+      <button type="button" class="nav-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">← 프로젝트 목록</a>
+      <header class="project-page-header">
+        <span class="project-page-label">Game Client</span>
+        <h1 class="project-page-title">게임 클라이언트</h1>
+        <p class="project-page-desc">멀티플레이어 온라인 게임의 클라이언트 개발 및 네트워크·UI 연동을 담당했습니다.</p>
+      </header>
+
+      <div class="project-card-image project-card-image--game project-page-hero">
+        <span class="project-card-image-text">GAME CLIENT</span>
+      </div>
+
+      <div class="project-content">
+        <section class="project-section">
+          <h2>개요</h2>
+          <p>PC 및 모바일 플랫폼용 게임 클라이언트를 설계하고 구현했습니다. 서버와의 실시간 통신, 로비·매칭·인게임 UI, 이벤트 처리 파이프라인을 구축하여 안정적인 플레이 환경을 제공했습니다.</p>
+        </section>
+        <section class="project-section">
+          <h2>역할 및 성과</h2>
+          <ul class="project-list">
+            <li>클라이언트-서버 소켓 통신 모듈 설계 및 프로토콜 정의</li>
+            <li>로비, 매칭, 룸 생성/입장 플로우 및 UI 연동</li>
+            <li>인게임 HUD, 미니맵, 채팅 등 UI 컴포넌트 개발</li>
+            <li>버퍼 관리, 패킷 직렬화/역직렬화로 지연 최소화</li>
+          </ul>
+        </section>
+        <section class="project-section">
+          <h2>기술 스택</h2>
+          <p><strong>C++, C#</strong> · Win32/MFC 또는 Unity 클라이언트 · TCP/UDP · 프로토콜 설계</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

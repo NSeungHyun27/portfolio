@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>언리얼 엔진 | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Portfolio</a>
+      <button type="button" class="nav-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">← 프로젝트 목록</a>
+      <header class="project-page-header">
+        <span class="project-page-label">Unreal Engine</span>
+        <h1 class="project-page-title">언리얼 엔진</h1>
+        <p class="project-page-desc">Unreal Engine 4/5를 활용한 프로토타입 및 게임 기능 개발, 블루프린트·C++ 연동 경험을 담았습니다.</p>
+      </header>
+
+      <div class="project-card-image project-card-image--unreal project-page-hero">
+        <span class="project-card-image-text">UNREAL ENGINE</span>
+      </div>
+
+      <div class="project-content">
+        <section class="project-section">
+          <h2>개요</h2>
+          <p>Unreal Engine으로 프로토타입부터 실제 프로젝트까지 참여했습니다. 블루프린트와 C++를 조합한 게임플레이 구현, 애니메이션·UI·멀티플레이어 기능을 다뤘습니다.</p>
+        </section>
+        <section class="project-section">
+          <h2>역할 및 성과</h2>
+          <ul class="project-list">
+            <li>캐릭터 컨트롤러, 입력 바인딩, 애니메이션 블루프린트 연동</li>
+            <li>위젯(UMG)을 이용한 메인 메뉴·HUD·설정 UI 제작</li>
+            <li>C++ 게임플레이 프레임워크(Actor, Component) 확장</li>
+            <li>멀티플레이어 테스트 및 리슨 서버/클라이언트 구조 이해</li>
+          </ul>
+        </section>
+        <section class="project-section">
+          <h2>기술 스택</h2>
+          <p><strong>Unreal Engine 4/5</strong> · Blueprint · C++ · UMG · Animation Blueprint</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

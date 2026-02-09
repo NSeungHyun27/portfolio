@@ -10,8 +10,8 @@
   --bg-elevated: #161b22;
   --bg-card: #21262d;
   --text: #e6edf3;
-  --text-muted: #8b949e;
-  --accent: #58a6ff;
+  --text-muted: #e6edf3;
+  --accent: #51ceff;
   --accent-hover: #79b8ff;
   --border: #30363d;
   --radius: 12px;
@@ -124,6 +124,10 @@ ul {
   gap: 2rem;
 }
 
+.nav-list > li {
+  position: relative;
+}
+
 .nav-list a {
   font-weight: 500;
   font-size: 0.95rem;
@@ -131,6 +135,72 @@ ul {
 }
 
 .nav-list a:hover {
+  color: var(--accent);
+}
+
+/* Projects 드롭다운 */
+.nav-item-has-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-dropdown-trigger::after {
+  content: '';
+  width: 0.4em;
+  height: 0.4em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.25em;
+  margin-bottom: 0.15em;
+  transition: transform var(--transition);
+}
+
+.nav-item-has-dropdown:hover .nav-dropdown-trigger::after {
+  transform: rotate(-135deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
+}
+
+.nav-item-has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown li {
+  border-bottom: none;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.nav-dropdown a:hover {
+  background: var(--bg-card);
   color: var(--accent);
 }
 
@@ -148,10 +218,25 @@ ul {
   pointer-events: none;
 }
 
-/* 화면 가득 채우는 히어로 배경 이미지 (이미지 경로: images/hero.jpg 등으로 변경 가능) */
+/* 히어로 배경: 미로 게임 캔버스 (메인만), 그 위에 그라데이션 */
+.hero-maze-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+.hero .hero-bg .hero-bg-image {
+  background: transparent;
+}
+
+/* 화면 가득 채우는 히어로 배경 이미지 (미로 미사용 시 또는 다른 페이지) */
 .hero-bg-image {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background-image: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 50%, var(--bg) 100%);
   background-size: cover;
   background-position: center;
@@ -164,7 +249,8 @@ ul {
 .hero-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(13, 17, 23, 0.4) 0%, rgba(13, 17, 23, 0.7) 100%);
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(13, 17, 23, 0.35) 0%, rgba(13, 17, 23, 0.75) 100%);
 }
 /*
 .hero-pattern {
@@ -273,12 +359,22 @@ ul {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  scroll-margin-top: 5rem;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
   box-shadow: 0 12px 32px rgba(88, 166, 255, 0.12);
+}
+
+.project-card-link {
+  display: block;
+  color: inherit;
+}
+
+.project-card-link:hover {
+  color: inherit;
 }
 
 .project-card-image {
@@ -296,6 +392,52 @@ ul {
   font-weight: 700;
   color: var(--border);
   background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+}
+
+/* 프로젝트 카드 이미지 테마 */
+.project-card-image--game {
+  background: linear-gradient(135deg, #3d2c8d 0%, #1a0f3d 50%, #0d0820 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-image--game .project-card-image-text {
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.project-card-image--engine {
+  background: linear-gradient(135deg, #0d4f3c 0%, #0a2e24 50%, #051a14 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-image--engine .project-card-image-text {
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.project-card-image--unreal {
+  background: linear-gradient(135deg, #8b3a0d 0%, #4a1f08 50%, #1f0d04 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-image--unreal .project-card-image-text {
+  font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .project-card-body {
@@ -321,7 +463,7 @@ ul {
   color: var(--accent);
 }
 
-.project-link:hover {
+.project-card-link:hover .project-link {
   color: var(--accent-hover);
 }
 
@@ -436,7 +578,7 @@ ul {
     gap: 0;
   }
 
-  .nav-list li {
+  .nav-list > li {
     width: 100%;
     border-bottom: 1px solid var(--border);
   }
@@ -444,6 +586,30 @@ ul {
   .nav-list a {
     display: block;
     padding: 1rem;
+  }
+
+  /* 모바일: Projects 드롭다운을 항상 펼쳐진 목록으로 표시 */
+  .nav-item-has-dropdown .nav-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 0;
+    padding: 0 0 0.5rem 1rem;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .nav-item-has-dropdown .nav-dropdown a {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .nav-dropdown-trigger::after {
+    display: none;
   }
 
   .hero-inner {

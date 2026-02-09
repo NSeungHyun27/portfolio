@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자체 엔진 | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Portfolio</a>
+      <button type="button" class="nav-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">← 프로젝트 목록</a>
+      <header class="project-page-header">
+        <span class="project-page-label">Custom Engine</span>
+        <h1 class="project-page-title">자체 엔진</h1>
+        <p class="project-page-desc">게임 및 도구 제작을 위한 자체 실시간 엔진의 코어 시스템과 에디터를 설계·개발했습니다.</p>
+      </header>
+
+      <div class="project-card-image project-card-image--engine project-page-hero">
+        <span class="project-card-image-text">CUSTOM ENGINE</span>
+      </div>
+
+      <div class="project-content">
+        <section class="project-section">
+          <h2>개요</h2>
+          <p>상용 엔진에 의존하지 않고, 렌더링·물리·오디오·스크립트 파이프라인을 갖춘 자체 실시간 엔진을 설계하고 구현했습니다. 에디터 툴을 통해 레벨 편집과 리소스 관리를 지원합니다.</p>
+        </section>
+        <section class="project-section">
+          <h2>역할 및 성과</h2>
+          <ul class="project-list">
+            <li>렌더링 파이프라인(쉐이더, 메시, 텍스처) 및 기본 라이팅 구현</li>
+            <li>씬 그래프, 엔티티-컴포넌트 구조 설계</li>
+            <li>물리 콜라이더·레이캐스트, 오디오 재생 모듈 연동</li>
+            <li>에디터 UI(뷰포트, 계층 구조, 인스펙터) 개발</li>
+          </ul>
+        </section>
+        <section class="project-section">
+          <h2>기술 스택</h2>
+          <p><strong>C++, DirectX/OpenGL</strong> · HLSL/GLSL · 자체 에디터(Win32 또는 Qt) · 스크립트(Lua 등)</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2025 Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

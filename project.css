@@ -1,0 +1,95 @@
+/* ===== 프로젝트 상세 페이지 ===== */
+.project-page {
+  padding: 6rem 0 4rem;
+  min-height: 100vh;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-page-header {
+  margin-bottom: 2rem;
+}
+
+.project-page-label {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.project-page-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.project-page-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.project-page-hero {
+  border-radius: var(--radius-lg);
+  margin-bottom: 2.5rem;
+  aspect-ratio: 21 / 9;
+  min-height: 200px;
+}
+
+.project-content {
+  max-width: 720px;
+}
+
+.project-section {
+  margin-bottom: 2rem;
+}
+
+.project-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.project-section p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.project-list {
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-left: 1.25rem;
+}
+
+.project-list li {
+  margin-bottom: 0.35rem;
+  list-style: disc;
+}
+
+.project-list li::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .project-page {
+    padding: 5rem 0 3rem;
+  }
+
+  .project-page-hero {
+    aspect-ratio: 16 / 10;
+  }
+}
